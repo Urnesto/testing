@@ -114,15 +114,33 @@ app.get('/api/jobs/:id', (req, res) => {
   res.json({ id, status, params, startedAt, finishedAt, exitCode, logs: logs.slice(-100) })
 })
 
-// DELETE /api/jobs/:id — kill running job
+// DELETE /api/jobs — clear all finished jobs (done/failed/cancelled/partial)
+app.delete('/api/jobs', (_req, res) => {
+  let killed = 0, cleared = 0
+  for (const [id, job] of jobs) {
+    if (job.status === 'running') {
+      try { process.kill(job.pid, 'SIGTERM') } catch {}
+      job.status = 'cancelled'
+      job.finishedAt = new Date().toISOString()
+      killed++
+    }
+    jobs.delete(id)
+    cleared++
+  }
+  res.json({ message: `Cleared ${cleared} job(s), killed ${killed} running` })
+})
+
+// DELETE /api/jobs/:id — kill or clear a single job
 app.delete('/api/jobs/:id', (req, res) => {
   const job = jobs.get(req.params.id)
   if (!job) return res.status(404).json({ error: 'Job not found' })
-  if (job.status !== 'running') return res.status(409).json({ error: 'Job is not running' })
-  try { process.kill(job.pid, 'SIGTERM') } catch {}
-  job.status = 'cancelled'
-  job.finishedAt = new Date().toISOString()
-  res.json({ message: 'Job cancelled' })
+  if (job.status === 'running') {
+    try { process.kill(job.pid, 'SIGTERM') } catch {}
+    job.status = 'cancelled'
+    job.finishedAt = new Date().toISOString()
+  }
+  jobs.delete(req.params.id)
+  res.json({ message: `Job ${req.params.id} removed` })
 })
 
 // GET /api/data/:name — return scraped data as JSON array
