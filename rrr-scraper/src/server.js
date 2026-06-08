@@ -177,30 +177,47 @@ app.delete('/api/jobs/:id', (req, res) => {
   res.json({ message: `Job ${req.params.id} removed` })
 })
 
-// GET /api/data/:name — return scraped data as JSON array
-// :name matches the --name param used when scraping, or "output" for default
+// GET /api/data/:name — return scraped data with optional pagination
+// Query params: ?page=1&limit=100 (omit both to get all items)
 app.get('/api/data/:name(*)', async (req, res) => {
   const name = req.params.name || 'output'
   const jsonPath  = join(ROOT, name, 'parts_data.json')
   const jsonlPath = join(ROOT, name, 'parts_data.jsonl')
 
-  if (existsSync(jsonPath)) {
-    res.setHeader('Content-Type', 'application/json')
-    return createReadStream(jsonPath).pipe(res)
-  }
+  const paginate = req.query.page !== undefined || req.query.limit !== undefined
+  const page  = Math.max(1, parseInt(req.query.page  || '1', 10))
+  const limit = Math.min(10000, Math.max(1, parseInt(req.query.limit || '100', 10)))
 
-  if (existsSync(jsonlPath)) {
-    // Stream-convert JSONL → JSON array on the fly
-    const parts = []
+  let parts = null
+
+  if (existsSync(jsonPath)) {
+    if (!paginate) {
+      res.setHeader('Content-Type', 'application/json')
+      return createReadStream(jsonPath).pipe(res)
+    }
+    parts = JSON.parse(readFileSync(jsonPath, 'utf-8'))
+  } else if (existsSync(jsonlPath)) {
+    parts = []
     const rl = createInterface({ input: createReadStream(jsonlPath, { encoding: 'utf-8' }), crlfDelay: Infinity })
     for await (const line of rl) {
       if (!line.trim()) continue
       try { parts.push(JSON.parse(line)) } catch {}
     }
-    return res.json(parts)
+    if (!paginate) return res.json(parts)
+  } else {
+    return res.status(404).json({ error: `No data found for name="${name}". Run a scrape first.` })
   }
 
-  res.status(404).json({ error: `No data found for name="${name}". Run a scrape first.` })
+  const total = parts.length
+  const pages = Math.ceil(total / limit)
+  const start = (page - 1) * limit
+  res.json({
+    data: parts.slice(start, start + limit),
+    total,
+    page,
+    limit,
+    pages,
+  })
 })
 
 // GET /api/data — shortcut for default output folder
