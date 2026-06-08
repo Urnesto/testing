@@ -1,23 +1,29 @@
-# fly.toml app configuration file generated for testing-swn0qg on 2026-06-08T10:40:29Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
+# fly.toml — deploy rrr-scraper API to Fly.io
+# fly launch --config rrr-scraper/fly.toml
 
-app = 'testing-swn0qg'
-primary_region = 'iad'
+app = "rrr-scraper"
+primary_region = "ams"
 
 [build]
+  dockerfile = "Dockerfile"
 
 [http_service]
-  internal_port = 8080
+  internal_port = 3000
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
-  processes = ['app']
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 50
+    soft_limit = 25
+
+[mounts]
+  source = "rrr_scraper_output"
+  destination = "/app/output"
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
+  memory = "1gb"
+  cpu_kind = "shared"
   cpus = 1
-  memory_mb = 256
