@@ -47,12 +47,13 @@ const CATEGORY_KEYS_FILE = join(__dirname, '..', '..', 'rrr-scraper', 'sub_sub_c
 const MAX_RETRIES = 5
 const BROWSER_RESTART_EVERY = 300
 
-// Output paths — overridden by --name at startup
-let OUTPUT_DIR = 'output'
-let OUTPUT_FILE = 'output/parts_data.jsonl'
-let OUTPUT_JSON = 'output/parts_data.json'
-let CHECKPOINT_FILE = 'output/parts_checkpoint.json'
-let CATEGORY_CHECKPOINT_FILE = 'output/parts_category_checkpoint.json'
+// Output paths — overridden by --name at startup (always absolute, anchored to repo root)
+const _REPO_ROOT = join(__dirname, '..')
+let OUTPUT_DIR = join(_REPO_ROOT, 'output')
+let OUTPUT_FILE = join(_REPO_ROOT, 'output', 'parts_data.jsonl')
+let OUTPUT_JSON = join(_REPO_ROOT, 'output', 'parts_data.json')
+let CHECKPOINT_FILE = join(_REPO_ROOT, 'output', 'parts_checkpoint.json')
+let CATEGORY_CHECKPOINT_FILE = join(_REPO_ROOT, 'output', 'parts_category_checkpoint.json')
 
 const _UA = (
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) ' +
@@ -381,11 +382,14 @@ function loadCategoryCheckpoint() {
 
 function saveCategoryCheckpoint(done, failed) {
   const tmp = CATEGORY_CHECKPOINT_FILE + '.tmp'
-  writeFileSync(tmp, JSON.stringify({
-    done: [...done],
-    failed: [...failed],
-  }))
-  renameSync(tmp, CATEGORY_CHECKPOINT_FILE)
+  try {
+    writeFileSync(tmp, JSON.stringify({ done: [...done], failed: [...failed] }))
+    renameSync(tmp, CATEGORY_CHECKPOINT_FILE)
+  } catch (err) {
+    logger.error(`Failed to save category checkpoint: ${err.message}`)
+  } finally {
+    if (existsSync(tmp)) try { unlinkSync(tmp) } catch {}
+  }
 }
 
 function loadCategoryKeys() {
@@ -1617,18 +1621,19 @@ async function main() {
   if (!name) {
     if (sellerUrl) {
       const slug = new URL(sellerUrl).pathname.replace(/^\/+|\/+$/g, '').replace(/[^a-z0-9]+/gi, '-') || 'seller'
-      name = `output/${slug}`
+      name = slug
     } else {
       name = 'output'
     }
   }
 
-  // Set output paths from --name
-  OUTPUT_DIR = name
-  OUTPUT_FILE = `${name}/parts_data.jsonl`
-  OUTPUT_JSON = `${name}/parts_data.json`
-  CHECKPOINT_FILE = `${name}/parts_checkpoint.json`
-  CATEGORY_CHECKPOINT_FILE = `${name}/parts_category_checkpoint.json`
+  // Set output paths from --name — always absolute so CWD shifts can't break writes
+  const nameAbs = join(_REPO_ROOT, name)
+  OUTPUT_DIR = nameAbs
+  OUTPUT_FILE = join(nameAbs, 'parts_data.jsonl')
+  OUTPUT_JSON = join(nameAbs, 'parts_data.json')
+  CHECKPOINT_FILE = join(nameAbs, 'parts_checkpoint.json')
+  CATEGORY_CHECKPOINT_FILE = join(nameAbs, 'parts_category_checkpoint.json')
   mkdirSync(OUTPUT_DIR, { recursive: true })
 
   if (args['enrich-only']) {
