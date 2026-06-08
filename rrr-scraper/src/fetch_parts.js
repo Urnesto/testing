@@ -182,19 +182,28 @@ function proxyFetch(url, options = {}) {
   return undiciFetch(url, { ...options, dispatcher: agent })
 }
 
-// pool.request() wrapper — only routes through proxy when --proxy is active
-async function proxyRequest(path, headers, pool) {
-  if (!_proxyEnabled) {
-    return pool.request({ path, method: 'GET', headers, throwOnError: false })
+// pool.request() wrapper — only routes through proxy when --proxy is active.
+// AbortController timeout covers queue-wait time (undici's headersTimeout only
+// starts after dispatch, so a full pool leaves requests waiting forever).
+async function proxyRequest(path, headers, pool, timeoutMs = 40000) {
+  const controller = new AbortController()
+  const tid = setTimeout(() => controller.abort(), timeoutMs)
+  try {
+    if (!_proxyEnabled) {
+      return pool.request({ path, method: 'GET', headers, throwOnError: false, signal: controller.signal })
+    }
+    const agent = nextProxyAgent()
+    return agent.request({
+      origin: SITE_ROOT,
+      path,
+      method: 'GET',
+      headers,
+      throwOnError: false,
+      signal: controller.signal,
+    })
+  } finally {
+    clearTimeout(tid)
   }
-  const agent = nextProxyAgent()
-  return agent.request({
-    origin: SITE_ROOT,
-    path,
-    method: 'GET',
-    headers,
-    throwOnError: false,
-  })
 }
 
 // ── State ─────────────────────────────────────────────────────────────────────
@@ -1733,10 +1742,10 @@ async function main() {
             timezoneId: 'America/New_York',
             userAgent: _UA,
           })
-          logger.debug(`CF-solver browser launched (channel=${channel ?? 'bundled'}).`)
+          logger.info(`CF-solver browser launched (channel=${channel ?? 'bundled'}).`)
           break
         } catch (e) {
-          logger.debug(`CF-solver launch failed (channel=${channel}): ${e.message}`)
+          logger.info(`CF-solver launch failed (channel=${channel}): ${e.message}`)
         }
       }
       if (!cfContext) {
