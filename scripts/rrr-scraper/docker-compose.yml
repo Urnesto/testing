@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./output:/app/output   # persist scraped data on host
+    environment:
+      - PORT=3000
+    restart: unless-stopped
