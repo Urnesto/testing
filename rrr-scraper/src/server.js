@@ -86,16 +86,26 @@ function launchScraper(job) {
 
 // POST /api/scrape — start a scrape job
 app.post('/api/scrape', (req, res) => {
-  const { seller = '', name = '', concurrency = 20, browser = false, proxy = false, enrichOnly = false } = req.body
+  const { seller = '', concurrency = 20, browser = false, proxy = false, enrichOnly = false } = req.body
+  let { name = '' } = req.body
 
   if (!seller && !name) {
     return res.status(400).json({ error: 'Provide at least "seller" URL or "name" output folder' })
   }
 
+  // Auto-derive name from seller URL slug (e.g. https://rrr.lt/bmwpartsloo → "bmwpartsloo")
+  if (!name && seller) {
+    try {
+      name = new URL(seller).pathname.replace(/^\/+|\/+$/g, '') || 'output'
+    } catch {
+      name = 'output'
+    }
+  }
+
   const job = createJob({ seller, name, concurrency, browser, proxy, enrichOnly })
   launchScraper(job)
 
-  res.status(202).json({ jobId: job.id, status: job.status, message: 'Scrape started' })
+  res.status(202).json({ jobId: job.id, name, status: job.status, message: 'Scrape started' })
 })
 
 // GET /api/jobs — list all jobs
