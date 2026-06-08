@@ -1,0 +1,1442 @@
+[
+  {
+    "url": "https://www.auto-data.net/en/zotye-t600-coupe-generation-8816",
+    "reason": "no_modifications",
+    "brand": "Zotye",
+    "model": "T600"
+  },
+  {
+    "url": "https://www.auto-data.net/en/wey-xev-concept-generation-6226",
+    "reason": "no_modifications",
+    "brand": "WEY",
+    "model": "XEV"
+  },
+  {
+    "url": "https://www.auto-data.net/en/wey-x-concept-generation-8138",
+    "reason": "no_modifications",
+    "brand": "WEY",
+    "model": "X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/wey-vv7-gt-pro-generation-7361",
+    "reason": "no_modifications",
+    "brand": "WEY",
+    "model": "VV7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/wey-s-concept-generation-8137",
+    "reason": "no_modifications",
+    "brand": "WEY",
+    "model": "S"
+  },
+  {
+    "url": "https://www.auto-data.net/en/wey-p8-concept-generation-6115",
+    "reason": "no_modifications",
+    "brand": "WEY",
+    "model": "P8"
+  },
+  {
+    "url": "https://www.auto-data.net/en/w-motors-fenyr-supersport-concept-generation-6444",
+    "reason": "no_modifications",
+    "brand": "W Motors",
+    "model": "Fenyr"
+  },
+  {
+    "url": "https://www.auto-data.net/en/wartburg-311-3-coupe-generation-8458",
+    "reason": "no_modifications",
+    "brand": "Wartburg",
+    "model": "311"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volvo-pv-544-generation-9921",
+    "reason": "no_modifications",
+    "brand": "Volvo",
+    "model": "PV 544"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-karmann-ghia-type-14-convertible-generation-8471",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "Karmann Ghia"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-id.-xtreme-concept-car-generation-9240",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "ID. XTREME"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-id.-space-vizzion-concept-car-generation-9239",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "ID. SPACE VIZZION"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-id.-roomzz-concept-generation-8136",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "ID. ROOMZZ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-id.-life-generation-8583",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "ID. LIFE"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-id.-gti-concept-car-generation-10217",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "ID. GTI"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-id.-cross-concept-generation-10925",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "ID. Cross"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-id.-buggy-concept-generation-7030",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "ID. BUGGY"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-futura-generation-8319",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "Futura"
+  },
+  {
+    "url": "https://www.auto-data.net/en/volkswagen-atlas-tanoak-concept-generation-8051",
+    "reason": "no_modifications",
+    "brand": "Volkswagen",
+    "model": "Atlas Tanoak"
+  },
+  {
+    "url": "https://www.auto-data.net/en/trumpchi-ge3-generation-6887",
+    "reason": "no_modifications",
+    "brand": "Trumpchi",
+    "model": "GE3"
+  },
+  {
+    "url": "https://www.auto-data.net/en/toyota-fine-comfort-ride-concept-generation-6938",
+    "reason": "no_modifications",
+    "brand": "Toyota",
+    "model": "Fine-Comfort Ride"
+  },
+  {
+    "url": "https://www.auto-data.net/en/toyota-curren-facelift-1995-generation-11117",
+    "reason": "no_modifications",
+    "brand": "Toyota",
+    "model": "Curren"
+  },
+  {
+    "url": "https://www.auto-data.net/en/toyota-corolla-spacio-ii-e120-facelift-2003-generation-7167",
+    "reason": "no_modifications",
+    "brand": "Toyota",
+    "model": "Corolla Spacio"
+  },
+  {
+    "url": "https://www.auto-data.net/en/toyota-concept-i-generation-6936",
+    "reason": "no_modifications",
+    "brand": "Toyota",
+    "model": "Concept-i"
+  },
+  {
+    "url": "https://www.auto-data.net/en/toyota-concept-i-ride-generation-6937",
+    "reason": "no_modifications",
+    "brand": "Toyota",
+    "model": "Concept-i"
+  },
+  {
+    "url": "https://www.auto-data.net/en/toyota-c-hr-hy-power-concept-generation-6921",
+    "reason": "no_modifications",
+    "brand": "Toyota",
+    "model": "C-HR"
+  },
+  {
+    "url": "https://www.auto-data.net/en/toyota-bz7-generation-11148",
+    "reason": "no_modifications",
+    "brand": "Toyota",
+    "model": "bZ7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/tiger-nine-generation-11060",
+    "reason": "no_modifications",
+    "brand": "Tiger",
+    "model": "Nine"
+  },
+  {
+    "url": "https://www.auto-data.net/en/tesla-cybercab-concept-generation-10446",
+    "reason": "no_modifications",
+    "brand": "Tesla",
+    "model": "Cybercab"
+  },
+  {
+    "url": "https://www.auto-data.net/en/tata-h5x-concept-generation-6935",
+    "reason": "no_modifications",
+    "brand": "Tata",
+    "model": "H5X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/tata-h2x-concept-generation-7029",
+    "reason": "no_modifications",
+    "brand": "Tata",
+    "model": "H2X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/tata-buzzard-geneva-edition-generation-7028",
+    "reason": "no_modifications",
+    "brand": "Tata",
+    "model": "Buzzard"
+  },
+  {
+    "url": "https://www.auto-data.net/en/tata-45x-generation-6923",
+    "reason": "no_modifications",
+    "brand": "Tata",
+    "model": "45X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/suzuki-fronte-facelift-1969-generation-10445",
+    "reason": "no_modifications",
+    "brand": "Suzuki",
+    "model": "Fronte"
+  },
+  {
+    "url": "https://www.auto-data.net/en/subaru-viziv-tourer-concept-generation-6934",
+    "reason": "no_modifications",
+    "brand": "Subaru",
+    "model": "Viziv"
+  },
+  {
+    "url": "https://www.auto-data.net/en/subaru-viziv-concept-generation-7013",
+    "reason": "no_modifications",
+    "brand": "Subaru",
+    "model": "Viziv"
+  },
+  {
+    "url": "https://www.auto-data.net/en/subaru-e-outback-generation-11018",
+    "reason": "no_modifications",
+    "brand": "Subaru",
+    "model": "Outback"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ssangyong-e-suv-concept-generation-6933",
+    "reason": "no_modifications",
+    "brand": "SsangYong",
+    "model": "e-SUV"
+  },
+  {
+    "url": "https://www.auto-data.net/en/smart-5-concept-generation-10442",
+    "reason": "no_modifications",
+    "brand": "Smart",
+    "model": "#5"
+  },
+  {
+    "url": "https://www.auto-data.net/en/skoda-vision-x-concept-generation-6929",
+    "reason": "no_modifications",
+    "brand": "Skoda",
+    "model": "Vision"
+  },
+  {
+    "url": "https://www.auto-data.net/en/skoda-vision-rs-concept-generation-6911",
+    "reason": "no_modifications",
+    "brand": "Skoda",
+    "model": "Vision"
+  },
+  {
+    "url": "https://www.auto-data.net/en/skoda-vision-iv-concept-generation-6931",
+    "reason": "no_modifications",
+    "brand": "Skoda",
+    "model": "Vision"
+  },
+  {
+    "url": "https://www.auto-data.net/en/skoda-vision-7s-concept-generation-9057",
+    "reason": "no_modifications",
+    "brand": "Skoda",
+    "model": "Vision"
+  },
+  {
+    "url": "https://www.auto-data.net/en/skoda-epiq-concept-generation-9918",
+    "reason": "no_modifications",
+    "brand": "Skoda",
+    "model": "Epiq"
+  },
+  {
+    "url": "https://www.auto-data.net/en/sin-cars-s1-generation-6928",
+    "reason": "no_modifications",
+    "brand": "Sin Cars",
+    "model": "S1"
+  },
+  {
+    "url": "https://www.auto-data.net/en/seres-7-generation-9660",
+    "reason": "no_modifications",
+    "brand": "Seres",
+    "model": "7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/seat-el-born-concept-generation-7027",
+    "reason": "no_modifications",
+    "brand": "Seat",
+    "model": "El-Born"
+  },
+  {
+    "url": "https://www.auto-data.net/en/scout-traveler-generation-10907",
+    "reason": "no_modifications",
+    "brand": "Scout",
+    "model": "Traveler"
+  },
+  {
+    "url": "https://www.auto-data.net/en/scout-terra-generation-10906",
+    "reason": "no_modifications",
+    "brand": "Scout",
+    "model": "Terra"
+  },
+  {
+    "url": "https://www.auto-data.net/en/sbarro-gtc-generation-6990",
+    "reason": "no_modifications",
+    "brand": "Sbarro",
+    "model": "GTC"
+  },
+  {
+    "url": "https://www.auto-data.net/en/rolls-royce-corniche-i-facelift-1974-generation-8181",
+    "reason": "no_modifications",
+    "brand": "Rolls-Royce",
+    "model": "Corniche"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-twingo-concept-generation-10218",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "Twingo"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-symbioz-concept-generation-6916",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "Symbioz"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-scenic-vision-concept-generation-9091",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "Scenic"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-monastella-type-ry2-generation-8470",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "Monastella"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-ez-go-concept-generation-6925",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "EZ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-ez-pro-concept-generation-6941",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "EZ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-ez-ultimo-concept-generation-6942",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "EZ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-5-electric-prototype-generation-8584",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "5"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-5-turbo-3e-concept-generation-9106",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "5"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-4ever-trophy-concept-generation-9059",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "4EVER Trophy"
+  },
+  {
+    "url": "https://www.auto-data.net/en/renault-10-generation-10930",
+    "reason": "no_modifications",
+    "brand": "Renault",
+    "model": "10"
+  },
+  {
+    "url": "https://www.auto-data.net/en/porsche-mission-x-concept-generation-9658",
+    "reason": "no_modifications",
+    "brand": "Porsche",
+    "model": "Mission X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/porsche-mission-e-concept-generation-6530",
+    "reason": "no_modifications",
+    "brand": "Porsche",
+    "model": "Mission E"
+  },
+  {
+    "url": "https://www.auto-data.net/en/porsche-911-gt1-strassenversion-generation-8154",
+    "reason": "no_modifications",
+    "brand": "Porsche",
+    "model": "911"
+  },
+  {
+    "url": "https://www.auto-data.net/en/porsche-901-generation-9924",
+    "reason": "no_modifications",
+    "brand": "Porsche",
+    "model": "901"
+  },
+  {
+    "url": "https://www.auto-data.net/en/plymouth-superbird-generation-10783",
+    "reason": "no_modifications",
+    "brand": "Plymouth",
+    "model": "Superbird"
+  },
+  {
+    "url": "https://www.auto-data.net/en/plymouth-barracuda-iii-facelift-1971-generation-10263",
+    "reason": "no_modifications",
+    "brand": "Plymouth",
+    "model": "Barracuda"
+  },
+  {
+    "url": "https://www.auto-data.net/en/pariss-electric-concept-generation-6901",
+    "reason": "no_modifications",
+    "brand": "Pariss",
+    "model": "Electric"
+  },
+  {
+    "url": "https://www.auto-data.net/en/pagani-zonda-hp-barchetta-generation-6924",
+    "reason": "no_modifications",
+    "brand": "Pagani",
+    "model": "Zonda"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ora-next-cat-generation-9103",
+    "reason": "no_modifications",
+    "brand": "ORA",
+    "model": "Cat"
+  },
+  {
+    "url": "https://www.auto-data.net/en/omoda-7-generation-10923",
+    "reason": "no_modifications",
+    "brand": "Omoda",
+    "model": "7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-sway-concept-generation-6905",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "Sway"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-safari-y60-generation-7237",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "Safari"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-patrol-iv-5-door-y60-facelift-1995-generation-8356",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "Patrol"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-imx-kuro-concept-generation-6393",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "IMx"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-imq-concept-generation-8129",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "IMQ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-gt-r50-generation-6733",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "GT-R"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-ariya-concept-generation-7369",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "Ariya"
+  },
+  {
+    "url": "https://www.auto-data.net/en/nissan-almera-iii-n17-generation-7417",
+    "reason": "no_modifications",
+    "brand": "Nissan",
+    "model": "Almera"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mitsubishi-shogun-iv-5-door-generation-8232",
+    "reason": "no_modifications",
+    "brand": "Mitsubishi",
+    "model": "Shogun"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mitsubishi-lancer-evolution-i-generation-8089",
+    "reason": "no_modifications",
+    "brand": "Mitsubishi",
+    "model": "Lancer Evolution"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mitsubishi-lancer-i-generation-8099",
+    "reason": "no_modifications",
+    "brand": "Mitsubishi",
+    "model": "Lancer"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mitsubishi-lancer-evolution-ii-generation-8090",
+    "reason": "no_modifications",
+    "brand": "Mitsubishi",
+    "model": "Lancer Evolution"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mitsubishi-e-evolution-concept-generation-6391",
+    "reason": "no_modifications",
+    "brand": "Mitsubishi",
+    "model": "e-Evolution"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mini-e-concept-generation-4495",
+    "reason": "no_modifications",
+    "brand": "Mini",
+    "model": "Electric"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mini-electric-concept-generation-6918",
+    "reason": "no_modifications",
+    "brand": "Mini",
+    "model": "Electric"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mini-aceman-concept-generation-9229",
+    "reason": "no_modifications",
+    "brand": "Mini",
+    "model": "Aceman"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mg-mgs9-ev-generation-9925",
+    "reason": "no_modifications",
+    "brand": "MG",
+    "model": "MGS9"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mg-mg9-ev-generation-9928",
+    "reason": "no_modifications",
+    "brand": "MG",
+    "model": "MG9"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mg-k3-generation-9926",
+    "reason": "no_modifications",
+    "brand": "MG",
+    "model": "K-Type Magnette"
+  },
+  {
+    "url": "https://www.auto-data.net/en/micro-lite-concept-generation-9105",
+    "reason": "no_modifications",
+    "brand": "Micro",
+    "model": "Lite"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercury-tracer-i-3-door-generation-8274",
+    "reason": "no_modifications",
+    "brand": "Mercury",
+    "model": "Tracer"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercury-tracer-i-5-door-generation-8275",
+    "reason": "no_modifications",
+    "brand": "Mercury",
+    "model": "Tracer"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-220-s-w180-ii-generation-10441",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "W180"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-vision-eqs-concept-generation-8133",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "Vision EQS"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-vision-maybach-6-cabriolet-concept-generation-5772",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "Vision 6"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-maybach-s-class-pullman-vv222-facelift-2018-generation-8131",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "S-class"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-f-200-imagination-generation-8601",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "F 200"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-f-015-luxury-in-motion-concept-generation-6922",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "F 015"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-eqv-concept-generation-8132",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "EQV"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-eqt-concept-generation-8361",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "EQT"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-maybach-eqs-suv-concept-generation-8566",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "EQS SUV"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-eqg-concept-generation-8563",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "EQG"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-eqa-concept-generation-6914",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "EQA"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-concept-eq-generation-6917",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "EQ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-vision-eq-silver-arrow-generation-6940",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "EQ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mercedes-benz-amg-gt-4-door-coupe-concept-generation-6919",
+    "reason": "no_modifications",
+    "brand": "Mercedes-Benz",
+    "model": "AMG GT 4-Door Coupe"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mclaren-senna-gtr-generation-9932",
+    "reason": "no_modifications",
+    "brand": "McLaren",
+    "model": "Senna"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mclaren-p1-gtr-generation-9934",
+    "reason": "no_modifications",
+    "brand": "McLaren",
+    "model": "P1"
+  },
+  {
+    "url": "https://www.auto-data.net/en/mazda-kai-concept-generation-6381",
+    "reason": "no_modifications",
+    "brand": "Mazda",
+    "model": "KAI"
+  },
+  {
+    "url": "https://www.auto-data.net/en/lincoln-zephyr-china-generation-8712",
+    "reason": "no_modifications",
+    "brand": "Lincoln",
+    "model": "Zephyr"
+  },
+  {
+    "url": "https://www.auto-data.net/en/lincoln-continental-mark-iv-facelift-1973-generation-8332",
+    "reason": "no_modifications",
+    "brand": "Lincoln",
+    "model": "Continental Mark"
+  },
+  {
+    "url": "https://www.auto-data.net/en/lexus-lf-1-limitless-concept-generation-6179",
+    "reason": "no_modifications",
+    "brand": "Lexus",
+    "model": "LF-1"
+  },
+  {
+    "url": "https://www.auto-data.net/en/lexus-lc-convertible-concept-generation-7007",
+    "reason": "no_modifications",
+    "brand": "Lexus",
+    "model": "LC"
+  },
+  {
+    "url": "https://www.auto-data.net/en/lexus-hs-facelift-2013-generation-10508",
+    "reason": "no_modifications",
+    "brand": "Lexus",
+    "model": "HS"
+  },
+  {
+    "url": "https://www.auto-data.net/en/leapmotor-b03x-generation-11002",
+    "reason": "no_modifications",
+    "brand": "Leapmotor",
+    "model": "B03X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/lamborghini-sc20-generation-8036",
+    "reason": "no_modifications",
+    "brand": "Lamborghini",
+    "model": "SC20"
+  },
+  {
+    "url": "https://www.auto-data.net/en/lamborghini-lambo-v12-vision-gran-turismo-generation-9941",
+    "reason": "no_modifications",
+    "brand": "Lamborghini",
+    "model": "Lambo V12 Vision Gran Turismo"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kimera-evo38-generation-9942",
+    "reason": "no_modifications",
+    "brand": "Kimera",
+    "model": "EVO38"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-tasman-single-cab-generation-10244",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "Tasman"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-sonet-concept-generation-7551",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "Sonet"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-rio-ii-hatchback-jb-facelift-2009-generation-5433",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "Rio"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-rio-ii-sedan-jb-facelift-2009-generation-5434",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "Rio"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-proceed-gt-reborn-concept-generation-6920",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "Pro Cee'd"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-picanto-i-facelift-2007-generation-8328",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "Picanto"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-imagine-concept-generation-7021",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "Imagine"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-ev9-concept-generation-8713",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "EV9"
+  },
+  {
+    "url": "https://www.auto-data.net/en/kia-ev2-concept-generation-10918",
+    "reason": "no_modifications",
+    "brand": "Kia",
+    "model": "EV2"
+  },
+  {
+    "url": "https://www.auto-data.net/en/jeep-cj-2a-generation-8142",
+    "reason": "no_modifications",
+    "brand": "Jeep",
+    "model": "CJ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/jeep-cj-3a-generation-8143",
+    "reason": "no_modifications",
+    "brand": "Jeep",
+    "model": "CJ"
+  },
+  {
+    "url": "https://www.auto-data.net/en/jaguar-xk120-generation-9940",
+    "reason": "no_modifications",
+    "brand": "Jaguar",
+    "model": "XK120"
+  },
+  {
+    "url": "https://www.auto-data.net/en/jaguar-e-type-series-1-generation-8631",
+    "reason": "no_modifications",
+    "brand": "Jaguar",
+    "model": "E-type"
+  },
+  {
+    "url": "https://www.auto-data.net/en/italdesign-da-vinci-concept-generation-7020",
+    "reason": "no_modifications",
+    "brand": "Italdesign",
+    "model": "Da Vinci"
+  },
+  {
+    "url": "https://www.auto-data.net/en/imsa-s-class-s720-facelift-generation-6229",
+    "reason": "no_modifications",
+    "brand": "IMSA",
+    "model": "S-class"
+  },
+  {
+    "url": "https://www.auto-data.net/en/imsa-g-class-generation-6227",
+    "reason": "no_modifications",
+    "brand": "IMSA",
+    "model": "G-Class"
+  },
+  {
+    "url": "https://www.auto-data.net/en/hyundai-le-fil-rouge-concept-generation-6877",
+    "reason": "no_modifications",
+    "brand": "Hyundai",
+    "model": "Le Fil Rouge"
+  },
+  {
+    "url": "https://www.auto-data.net/en/hyundai-ioniq-3-generation-11177",
+    "reason": "no_modifications",
+    "brand": "Hyundai",
+    "model": "IONIQ 3"
+  },
+  {
+    "url": "https://www.auto-data.net/en/hyundai-initium-generation-10434",
+    "reason": "no_modifications",
+    "brand": "Hyundai",
+    "model": "INITIUM"
+  },
+  {
+    "url": "https://www.auto-data.net/en/hyundai-inster-cross-generation-10435",
+    "reason": "no_modifications",
+    "brand": "Hyundai",
+    "model": "Inster"
+  },
+  {
+    "url": "https://www.auto-data.net/en/honda-urban-ev-concept-generation-6193",
+    "reason": "no_modifications",
+    "brand": "Honda",
+    "model": "EV"
+  },
+  {
+    "url": "https://www.auto-data.net/en/honda-sports-ev-concept-generation-8050",
+    "reason": "no_modifications",
+    "brand": "Honda",
+    "model": "EV"
+  },
+  {
+    "url": "https://www.auto-data.net/en/honda-elysion-ii-generation-7220",
+    "reason": "no_modifications",
+    "brand": "Honda",
+    "model": "Elysion"
+  },
+  {
+    "url": "https://www.auto-data.net/en/hongqi-h7-generation-8308",
+    "reason": "no_modifications",
+    "brand": "Hongqi",
+    "model": "H7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/hispano-suiza-k6-coupe-generation-7019",
+    "reason": "no_modifications",
+    "brand": "Hispano Suiza",
+    "model": "K6"
+  },
+  {
+    "url": "https://www.auto-data.net/en/gmc-sierra-ev-crew-cab-generation-10475",
+    "reason": "no_modifications",
+    "brand": "GMC",
+    "model": "Sierra EV"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ginetta-g58-generation-7018",
+    "reason": "no_modifications",
+    "brand": "Ginetta",
+    "model": "G58"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ginetta-akula-generation-7017",
+    "reason": "no_modifications",
+    "brand": "Ginetta",
+    "model": "Akula"
+  },
+  {
+    "url": "https://www.auto-data.net/en/genesis-gv60-magma-concept-generation-10438",
+    "reason": "no_modifications",
+    "brand": "Genesis",
+    "model": "GV60"
+  },
+  {
+    "url": "https://www.auto-data.net/en/gaz-m1-generation-2951",
+    "reason": "no_modifications",
+    "brand": "GAZ",
+    "model": "M1"
+  },
+  {
+    "url": "https://www.auto-data.net/en/fso-warszawa-201-generation-9040",
+    "reason": "no_modifications",
+    "brand": "FSO",
+    "model": "Warszawa"
+  },
+  {
+    "url": "https://www.auto-data.net/en/fso-warszawa-223-combi-generation-8456",
+    "reason": "no_modifications",
+    "brand": "FSO",
+    "model": "Warszawa"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-windstar-i-facelift-1996-generation-8366",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Windstar"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-thunderbird-i-convertible-generation-8935",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Thunderbird"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-ranchero-vi-generation-8454",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Ranchero"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-mustang-i-facelift-1970-generation-8400",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Mustang"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-model-t-generation-9935",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Model T"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-fiesta-van-viii-mk8-facelift-2022-generation-8579",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Fiesta"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-fairlane-generation-8389",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Fairlane"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ford-escort-sedan-china-generation-6777",
+    "reason": "no_modifications",
+    "brand": "Ford",
+    "model": "Escort"
+  },
+  {
+    "url": "https://www.auto-data.net/en/forthing-friday-generation-10915",
+    "reason": "no_modifications",
+    "brand": "Forthing",
+    "model": "Friday"
+  },
+  {
+    "url": "https://www.auto-data.net/en/fiat-linea-facelift-2014-generation-8127",
+    "reason": "no_modifications",
+    "brand": "Fiat",
+    "model": "Linea"
+  },
+  {
+    "url": "https://www.auto-data.net/en/fiat-centoventi-concept-generation-7001",
+    "reason": "no_modifications",
+    "brand": "Fiat",
+    "model": "Centoventi"
+  },
+  {
+    "url": "https://www.auto-data.net/en/fiat-500x-dolcevita-facelift-2022-generation-9953",
+    "reason": "no_modifications",
+    "brand": "Fiat",
+    "model": "500X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ferrari-sp48-unica-generation-8865",
+    "reason": "no_modifications",
+    "brand": "Ferrari",
+    "model": "SP48 Unica"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ferrari-dino-246-gt-generation-9933",
+    "reason": "no_modifications",
+    "brand": "Ferrari",
+    "model": "Dino"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ferrari-br20-generation-8693",
+    "reason": "no_modifications",
+    "brand": "Ferrari",
+    "model": "BR20"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ferrari-500-superfast-generation-9931",
+    "reason": "no_modifications",
+    "brand": "Ferrari",
+    "model": "500 Superfast"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ferrari-365-gtc-generation-8917",
+    "reason": "no_modifications",
+    "brand": "Ferrari",
+    "model": "365"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ferrari-250-gt-pininfarina-cabriolet-series-1-generation-8934",
+    "reason": "no_modifications",
+    "brand": "Ferrari",
+    "model": "250 GT"
+  },
+  {
+    "url": "https://www.auto-data.net/en/exeed-et8-generation-11167",
+    "reason": "no_modifications",
+    "brand": "Exeed",
+    "model": "ET8"
+  },
+  {
+    "url": "https://www.auto-data.net/en/dodge-dart-iv-swinger-hardtop-generation-8390",
+    "reason": "no_modifications",
+    "brand": "Dodge",
+    "model": "Dart"
+  },
+  {
+    "url": "https://www.auto-data.net/en/dodge-dart-iv-swinger-hardtop-facelift-1974-generation-8392",
+    "reason": "no_modifications",
+    "brand": "Dodge",
+    "model": "Dart"
+  },
+  {
+    "url": "https://www.auto-data.net/en/daihatsu-mira-gino-l700-generation-8048",
+    "reason": "no_modifications",
+    "brand": "Daihatsu",
+    "model": "Mira Gino"
+  },
+  {
+    "url": "https://www.auto-data.net/en/dacia-manifesto-concept-generation-9088",
+    "reason": "no_modifications",
+    "brand": "Dacia",
+    "model": "Manifesto"
+  },
+  {
+    "url": "https://www.auto-data.net/en/dacia-hipster-concept-generation-10855",
+    "reason": "no_modifications",
+    "brand": "Dacia",
+    "model": "Hipster"
+  },
+  {
+    "url": "https://www.auto-data.net/en/cupra-tindaya-concept-generation-11059",
+    "reason": "no_modifications",
+    "brand": "Cupra",
+    "model": "Tindaya"
+  },
+  {
+    "url": "https://www.auto-data.net/en/cupra-raval-concept-generation-9650",
+    "reason": "no_modifications",
+    "brand": "Cupra",
+    "model": "Raval"
+  },
+  {
+    "url": "https://www.auto-data.net/en/cupra-formentor-concept-generation-6999",
+    "reason": "no_modifications",
+    "brand": "Cupra",
+    "model": "Formentor"
+  },
+  {
+    "url": "https://www.auto-data.net/en/citroen-oli-concept-car-generation-9238",
+    "reason": "no_modifications",
+    "brand": "Citroen",
+    "model": "Oli"
+  },
+  {
+    "url": "https://www.auto-data.net/en/citroen-c5-aircross-plug-in-hybrid-concept-generation-6623",
+    "reason": "no_modifications",
+    "brand": "Citroen",
+    "model": "C5 Aircross"
+  },
+  {
+    "url": "https://www.auto-data.net/en/citroen-c5-aircross-concept-generation-10232",
+    "reason": "no_modifications",
+    "brand": "Citroen",
+    "model": "C5 Aircross"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-tiggo-7-ii-facelift-2025-global-market-generation-11170",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "Tiggo 7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-tiggo-8-i-facelift-2024-generation-11132",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "Tiggo 8"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-tiggo-sport-coupe-concept-generation-6232",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "Tiggo"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-fulwin-generation-11164",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "Fulwin"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-eq1-generation-10002",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "EQ1"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-e5-generation-5460",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "E5"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-arrizo-7-generation-5459",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "Arrizo 7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chery-arrizo-3-generation-5457",
+    "reason": "no_modifications",
+    "brand": "Chery",
+    "model": "Arrizo 3"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chevrolet-corvette-convertible-c1-generation-8914",
+    "reason": "no_modifications",
+    "brand": "Chevrolet",
+    "model": "Corvette"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chevrolet-corvette-coupe-c2-generation-8915",
+    "reason": "no_modifications",
+    "brand": "Chevrolet",
+    "model": "Corvette"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chevrolet-corvette-convertible-c2-generation-8916",
+    "reason": "no_modifications",
+    "brand": "Chevrolet",
+    "model": "Corvette"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chevrolet-corvette-coupe-c3-generation-8122",
+    "reason": "no_modifications",
+    "brand": "Chevrolet",
+    "model": "Corvette"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chevrolet-corvette-convertible-c3-generation-8453",
+    "reason": "no_modifications",
+    "brand": "Chevrolet",
+    "model": "Corvette"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chevrolet-caprice-v-generation-9996",
+    "reason": "no_modifications",
+    "brand": "Chevrolet",
+    "model": "Caprice"
+  },
+  {
+    "url": "https://www.auto-data.net/en/chevrolet-caprice-v-facelift-2003-generation-9997",
+    "reason": "no_modifications",
+    "brand": "Chevrolet",
+    "model": "Caprice"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bugatti-veyron-f.k.p.-hommage-generation-11037",
+    "reason": "no_modifications",
+    "brand": "Bugatti",
+    "model": "Veyron"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bugatti-type-41-royale-esders-roadster-generation-9923",
+    "reason": "no_modifications",
+    "brand": "Bugatti",
+    "model": "Type 41 Royale"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bugatti-type-41-royale-coupe-de-ville-binder-generation-9922",
+    "reason": "no_modifications",
+    "brand": "Bugatti",
+    "model": "Type 41 Royale"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bugatti-la-voiture-noire-generation-6972",
+    "reason": "no_modifications",
+    "brand": "Bugatti",
+    "model": "La Voiture Noire"
+  },
+  {
+    "url": "https://www.auto-data.net/en/borgward-isabella-concept-generation-6183",
+    "reason": "no_modifications",
+    "brand": "Borgward",
+    "model": "Isabella"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-z4-g29-concept-generation-5756",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "Z4"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-x7-concept-generation-6214",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "X7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-vision-neue-klasse-x-generation-10240",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "Vision Neue Klasse X"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-vision-neue-klasse-generation-10239",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "Vision Neue Klasse"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-vision-driving-experience-generation-11011",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "Vision Driving Experience"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-ix5-hydrogen-generation-8542",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "iX5"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-ix3-concept-generation-7891",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "iX3"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-i8-coupe-concept-generation-6019",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "i8"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bmw-4-series-concept-4-generation-7273",
+    "reason": "no_modifications",
+    "brand": "BMW",
+    "model": "4 Series"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bizzarrini-p538-generation-8486",
+    "reason": "no_modifications",
+    "brand": "Bizzarrini",
+    "model": "P538"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bizzarrini-1900-gt-europa-generation-8487",
+    "reason": "no_modifications",
+    "brand": "Bizzarrini",
+    "model": "1900 GT Europa"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bentley-mark-vi-generation-8452",
+    "reason": "no_modifications",
+    "brand": "Bentley",
+    "model": "Mark VI"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bentley-batur-generation-9005",
+    "reason": "no_modifications",
+    "brand": "Bentley",
+    "model": "Batur"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bentley-batur-convertible-generation-10010",
+    "reason": "no_modifications",
+    "brand": "Bentley",
+    "model": "Batur"
+  },
+  {
+    "url": "https://www.auto-data.net/en/bentley-mulliner-bacalar-generation-7594",
+    "reason": "no_modifications",
+    "brand": "Bentley",
+    "model": "Bacalar"
+  },
+  {
+    "url": "https://www.auto-data.net/en/audi-skysphere-concept-generation-9227",
+    "reason": "no_modifications",
+    "brand": "Audi",
+    "model": "Skysphere"
+  },
+  {
+    "url": "https://www.auto-data.net/en/audi-q4-sportback-e-tron-concept-generation-8202",
+    "reason": "no_modifications",
+    "brand": "Audi",
+    "model": "Q4 e-tron"
+  },
+  {
+    "url": "https://www.auto-data.net/en/audi-concept-c-generation-11009",
+    "reason": "no_modifications",
+    "brand": "Audi",
+    "model": "Concept C"
+  },
+  {
+    "url": "https://www.auto-data.net/en/audi-aicon-concept-generation-6182",
+    "reason": "no_modifications",
+    "brand": "Audi",
+    "model": "Aicon"
+  },
+  {
+    "url": "https://www.auto-data.net/en/audi-a6l-e-tron-gh-generation-10728",
+    "reason": "no_modifications",
+    "brand": "Audi",
+    "model": "A6 e-tron"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-vanquish-vision-concept-generation-7016",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Vanquish"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-valkyrie-amr-pro-generation-6927",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Valkyrie"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-valkyrie-am-rb-003-generation-6996",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Valkyrie"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-valkyrie-generation-6998",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Valkyrie"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-valiant-generation-10077",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Valiant"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-valhalla-concept-generation-8496",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Valhalla"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-lagonda-vision-concept-generation-6445",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Lagonda"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aston-martin-lagonda-all-terrain-concept-generation-6997",
+    "reason": "no_modifications",
+    "brand": "Aston Martin",
+    "model": "Lagonda"
+  },
+  {
+    "url": "https://www.auto-data.net/en/artega-scalo-superelletra-generation-5643",
+    "reason": "no_modifications",
+    "brand": "Artega",
+    "model": "Scalo"
+  },
+  {
+    "url": "https://www.auto-data.net/en/arcfox-ecf-concept-generation-6985",
+    "reason": "no_modifications",
+    "brand": "Arcfox",
+    "model": "ECF"
+  },
+  {
+    "url": "https://www.auto-data.net/en/alpine-a390-b-concept-generation-10236",
+    "reason": "no_modifications",
+    "brand": "Alpine",
+    "model": "A390"
+  },
+  {
+    "url": "https://www.auto-data.net/en/alfa-romeo-tonale-concept-generation-6983",
+    "reason": "no_modifications",
+    "brand": "Alfa Romeo",
+    "model": "Tonale"
+  },
+  {
+    "url": "https://www.auto-data.net/en/alfa-romeo-giulia-erreerre-fuoriserie-generation-9920",
+    "reason": "no_modifications",
+    "brand": "Alfa Romeo",
+    "model": "Giulia"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aito-9-generation-10912",
+    "reason": "no_modifications",
+    "brand": "AITO",
+    "model": "9"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aito-8-generation-10911",
+    "reason": "no_modifications",
+    "brand": "AITO",
+    "model": "8"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aito-7-generation-10238",
+    "reason": "no_modifications",
+    "brand": "AITO",
+    "model": "7"
+  },
+  {
+    "url": "https://www.auto-data.net/en/aito-5-generation-10910",
+    "reason": "no_modifications",
+    "brand": "AITO",
+    "model": "5"
+  },
+  {
+    "url": "https://www.auto-data.net/en/ac-cobra-260-generation-9919",
+    "reason": "no_modifications",
+    "brand": "AC",
+    "model": "Cobra"
+  }
+]

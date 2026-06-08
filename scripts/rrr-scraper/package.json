@@ -1,0 +1,21 @@
+{
+  "name": "rrr-scraper-node",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Production-grade async scraper for rrr.lt parts — Node.js port of fetch_parts.py",
+  "scripts": {
+    "start": "node src/server.js",
+    "scrape": "node src/fetch_parts.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.22.2",
+    "p-queue": "^8.0.1",
+    "playwright": "^1.44.0",
+    "undici": "^6.21.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

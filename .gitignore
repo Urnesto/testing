@@ -1,0 +1,9 @@
+node_modules/
+output/
+*.jsonl
+*.json.tmp
+.DS_Store
+.env
+.seller_cache.json
+playwright-report/
+test-results/
