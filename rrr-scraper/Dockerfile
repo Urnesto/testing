@@ -7,7 +7,6 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 
 COPY src/ ./src/
-COPY sub_sub_categories_keys.txt ./
 
 RUN mkdir -p output
 
