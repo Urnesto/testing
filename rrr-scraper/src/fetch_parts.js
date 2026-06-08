@@ -42,7 +42,7 @@ const SITE_ROOT = 'https://rrr.lt'
 const BASE_PATH = '/paieska'
 let SEARCH_ID = '6'
 let _cfCookieHeader = ''  // set after Playwright CF warmup, injected into all HTTP requests
-const CATEGORY_KEYS_FILE = join(__dirname, '..', '..', 'rrr-scraper', 'sub_sub_categories_keys.txt')
+const CATEGORY_KEYS_FILE = join(__dirname, '..', 'sub_sub_categories_keys.txt')
 
 const MAX_RETRIES = 5
 const BROWSER_RESTART_EVERY = 300
