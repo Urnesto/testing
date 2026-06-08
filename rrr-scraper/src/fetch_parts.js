@@ -827,7 +827,7 @@ async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnric
     const saveEvery = 400
     let cfWarnedAt = 0
     let lastSavedAt = 0
-    let useProxy = false  // start direct, switch to proxy if CF blocks pile up
+    let useProxy = _proxyEnabled  // use proxies from the start on servers where DC IPs are CF-throttled
 
     function flushEnrichedParts() {
       const tmp = OUTPUT_FILE + '.tmp'
@@ -848,10 +848,7 @@ async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnric
 
         if (cfBlocked) {
           cfBlocks++
-          if (!useProxy && cfBlocks >= 30 && _proxyEnabled) {
-            useProxy = true
-            logger.warn(`CF blocking ${cfBlocks} image requests — switching to proxy rotation for remaining images.`)
-          } else if (cfBlocks - cfWarnedAt >= 50) {
+          if (cfBlocks - cfWarnedAt >= 50) {
             cfWarnedAt = cfBlocks
             logger.warn(`CF blocking image requests: ${cfBlocks} so far`)
             queue.concurrency = Math.max(5, Math.floor(queue.concurrency / 2))
