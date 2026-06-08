@@ -700,16 +700,21 @@ function isCfChallengePage(text) {
 }
 
 // Return value: { images: string[], cfBlocked: bool }
-async function fetchImageUrls(slug, imgHeaders, imgPool, maxRetries = 2) {
+async function fetchImageUrls(slug, imgHeaders, imgPool, maxRetries = 2, useProxy = false) {
   let delay = 200
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const url = new URL(slug)
-      const res = await proxyRequest(url.pathname + url.search, imgHeaders, imgPool)
+
+      // Direct pool when useProxy=false, proxy rotation when useProxy=true
+      const res = useProxy && _proxyEnabled
+        ? await proxyRequest(url.pathname + url.search, imgHeaders, imgPool)
+        : await imgPool.request({ path: url.pathname + url.search, method: 'GET', headers: imgHeaders, throwOnError: false })
 
       if (!res) {
-        // pool returned undefined (Bun compat) — fallback via proxyFetch (proxy-aware)
-        const fetchRes = await proxyFetch(slug, { headers: imgHeaders })
+        const fetchRes = useProxy && _proxyEnabled
+          ? await proxyFetch(slug, { headers: imgHeaders })
+          : await fetch(slug, { headers: imgHeaders })
         if (!fetchRes.ok) return { images: [], cfBlocked: [403, 503].includes(fetchRes.status) }
         const text = await fetchRes.text()
         if (isCfChallengePage(text)) return { images: [], cfBlocked: true }
@@ -816,6 +821,7 @@ async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnric
     const saveEvery = 400
     let cfWarnedAt = 0
     let lastSavedAt = 0
+    let useProxy = false  // start direct, switch to proxy if CF blocks pile up
 
     function flushEnrichedParts() {
       const tmp = OUTPUT_FILE + '.tmp'
@@ -832,13 +838,16 @@ async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnric
       await Promise.all(uniqueSlugs.map(slug => queue.add(async () => {
         if (_stop) return
 
-        const { images, cfBlocked } = await fetchImageUrls(slug, imgHeaders, imgPool)
+        const { images, cfBlocked } = await fetchImageUrls(slug, imgHeaders, imgPool, 2, useProxy)
 
         if (cfBlocked) {
           cfBlocks++
-          if (cfBlocks - cfWarnedAt >= 50) {
+          if (!useProxy && cfBlocks >= 30 && _proxyEnabled) {
+            useProxy = true
+            logger.warn(`CF blocking ${cfBlocks} image requests — switching to proxy rotation for remaining images.`)
+          } else if (cfBlocks - cfWarnedAt >= 50) {
             cfWarnedAt = cfBlocks
-            logger.warn(`CF blocking image requests: ${cfBlocks} so far — consider passing --browser or refreshing --cf-wait`)
+            logger.warn(`CF blocking image requests: ${cfBlocks} so far`)
             queue.concurrency = Math.max(5, Math.floor(queue.concurrency / 2))
             logger.warn(`Image concurrency reduced to ${queue.concurrency} due to CF blocks`)
           }
