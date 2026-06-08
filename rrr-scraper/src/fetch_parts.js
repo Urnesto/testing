@@ -21,7 +21,6 @@
 
 import { Pool, ProxyAgent, setGlobalDispatcher, Agent, fetch as undiciFetch } from 'undici'
 import PQueue from 'p-queue'
-import * as cheerio from 'cheerio'
 import { chromium } from 'playwright'
 import {
   existsSync, readFileSync, writeFileSync, renameSync,
@@ -659,11 +658,14 @@ async function fetchPageHttp(pool, pageNum, sem, cpc = null) {
 
 let IMG_CONCURRENCY = 50
 
+const _JSONLD_RE = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi
+
 function extractImagesFromHtml(html) {
-  const $ = cheerio.load(html)
-  for (const el of $('script[type="application/ld+json"]').toArray()) {
+  _JSONLD_RE.lastIndex = 0
+  let m
+  while ((m = _JSONLD_RE.exec(html)) !== null) {
     try {
-      const data = JSON.parse($(el).html() || '{}')
+      const data = JSON.parse(m[1])
       if (data['@type'] === 'Product') {
         const imgs = data.image
         return Array.isArray(imgs) ? imgs : (imgs ? [imgs] : [])
@@ -827,7 +829,7 @@ async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnric
     const saveEvery = 400
     let cfWarnedAt = 0
     let lastSavedAt = 0
-    let useProxy = _proxyEnabled  // use proxies from the start on servers where DC IPs are CF-throttled
+    let useProxy = false  // start direct; flip to proxy rotation if CF starts blocking
 
     function flushEnrichedParts() {
       const tmp = OUTPUT_FILE + '.tmp'
@@ -848,6 +850,10 @@ async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnric
 
         if (cfBlocked) {
           cfBlocks++
+          if (!useProxy && _proxyEnabled && cfBlocks >= 30) {
+            useProxy = true
+            logger.info(`30 CF blocks reached — switching image enrichment to proxy rotation`)
+          }
           if (cfBlocks - cfWarnedAt >= 50) {
             cfWarnedAt = cfBlocks
             logger.warn(`CF blocking image requests: ${cfBlocks} so far`)
