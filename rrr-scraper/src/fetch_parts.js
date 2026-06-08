@@ -709,7 +709,13 @@ async function fetchImageUrls(slug, imgHeaders, imgPool, maxRetries = 2, useProx
       // Direct pool when useProxy=false, proxy rotation when useProxy=true
       const res = useProxy && _proxyEnabled
         ? await proxyRequest(url.pathname + url.search, imgHeaders, imgPool)
-        : await imgPool.request({ path: url.pathname + url.search, method: 'GET', headers: imgHeaders, throwOnError: false })
+        : await (async () => {
+            const ctrl = new AbortController()
+            const tid = setTimeout(() => ctrl.abort(), 30000)
+            try {
+              return await imgPool.request({ path: url.pathname + url.search, method: 'GET', headers: imgHeaders, throwOnError: false, signal: ctrl.signal })
+            } finally { clearTimeout(tid) }
+          })()
 
       if (!res) {
         const fetchRes = useProxy && _proxyEnabled
