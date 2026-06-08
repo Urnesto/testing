@@ -143,7 +143,7 @@ const EXIT_CAPTCHA = 3
 // Enabled only when --proxy flag is passed. Agents are initialised in main()
 // after CLI args are parsed.
 
-const _PROXY_FILE = join(__dirname, '..', '..', 'proxy', 'proxyscrape_premium_http_proxies.txt')
+const _PROXY_FILE = join(__dirname, '..', 'proxy', 'proxyscrape_premium_http_proxies.txt')
 
 let _proxyEnabled = false  // set to true only when --proxy is passed
 let _proxyUrls   = []
