@@ -753,10 +753,6 @@ async function fetchImageUrls(slug, imgHeaders, imgPool, maxRetries = 2) {
 }
 
 async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnrich = false) {
-  if (global._skipImages) {
-    logger.info('Image enrichment skipped (no browser available).')
-    return
-  }
   logger.info(`Image enrichment pass: reading ${OUTPUT_FILE}…`)
   if (!existsSync(OUTPUT_FILE)) return
 
@@ -1756,10 +1752,7 @@ async function main() {
         }
       }
       if (!cfContext) {
-        logger.warn('Could not launch CF-solver browser — scraping without image enrichment.')
-        // Patch enrichJsonlWithImages to be a no-op so the job still completes
-        // with all parts data, just no images.
-        global._skipImages = true
+        logger.warn('Could not launch CF-solver browser — image enrichment will run without CF cookies (some images may be blocked by CF).')
       }
 
       const ok = await runHttp(concurrency, captchaWaitS, cfContext)
