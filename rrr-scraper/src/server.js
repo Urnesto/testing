@@ -11,7 +11,7 @@
 
 import express from 'express'
 import { spawn } from 'child_process'
-import { existsSync, readFileSync, createReadStream } from 'fs'
+import { existsSync, readFileSync, writeFileSync, unlinkSync, mkdirSync, readdirSync, createReadStream } from 'fs'
 import { createInterface } from 'readline'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
@@ -19,7 +19,8 @@ import { randomUUID } from 'crypto'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
-const OUTPUT_ROOT = join(ROOT, 'output')
+const JOBS_DIR = join(ROOT, 'output', '_jobs')
+mkdirSync(JOBS_DIR, { recursive: true })
 
 const app = express()
 app.use(express.json())
@@ -27,6 +28,28 @@ app.use(express.json())
 // ── Job registry ──────────────────────────────────────────────────────────────
 
 const jobs = new Map()  // id → { id, status, params, logs, pid, startedAt, finishedAt, exitCode }
+
+function jobFile(id) { return join(JOBS_DIR, `${id}.json`) }
+
+function persistJob(job) {
+  try {
+    const { id, status, params, startedAt, finishedAt, exitCode, logs } = job
+    writeFileSync(jobFile(id), JSON.stringify({ id, status, params, startedAt, finishedAt, exitCode, logs }, null, 2))
+  } catch {}
+}
+
+// Load persisted jobs from disk on startup
+try {
+  for (const file of readdirSync(JOBS_DIR)) {
+    if (!file.endsWith('.json')) continue
+    try {
+      const job = JSON.parse(readFileSync(join(JOBS_DIR, file), 'utf-8'))
+      if (job.status === 'running') job.status = 'failed'  // was running when server died
+      jobs.set(job.id, job)
+    } catch {}
+  }
+  console.log(`Loaded ${jobs.size} persisted job(s) from disk`)
+} catch {}
 
 function createJob(params) {
   const id = randomUUID()
@@ -41,6 +64,7 @@ function createJob(params) {
     exitCode: null,
   }
   jobs.set(id, job)
+  persistJob(job)
   return job
 }
 
@@ -68,6 +92,7 @@ function launchScraper(job) {
   const appendLog = (line) => {
     job.logs.push(line)
     if (job.logs.length > 2000) job.logs.shift()  // cap memory
+    persistJob(job)
   }
 
   child.stdout.on('data', d => d.toString().split('\n').filter(Boolean).forEach(appendLog))
@@ -77,6 +102,7 @@ function launchScraper(job) {
     job.status = code === 0 ? 'done' : code === 2 ? 'partial' : 'failed'
     job.exitCode = code
     job.finishedAt = new Date().toISOString()
+    persistJob(job)
   })
 
   return child
@@ -124,16 +150,15 @@ app.get('/api/jobs/:id', (req, res) => {
   res.json({ id, status, params, startedAt, finishedAt, exitCode, logs: logs.slice(-100) })
 })
 
-// DELETE /api/jobs — clear all finished jobs (done/failed/cancelled/partial)
+// DELETE /api/jobs — clear all jobs
 app.delete('/api/jobs', (_req, res) => {
   let killed = 0, cleared = 0
   for (const [id, job] of jobs) {
     if (job.status === 'running') {
       try { process.kill(job.pid, 'SIGTERM') } catch {}
-      job.status = 'cancelled'
-      job.finishedAt = new Date().toISOString()
       killed++
     }
+    try { unlinkSync(jobFile(id)) } catch {}
     jobs.delete(id)
     cleared++
   }
@@ -146,9 +171,8 @@ app.delete('/api/jobs/:id', (req, res) => {
   if (!job) return res.status(404).json({ error: 'Job not found' })
   if (job.status === 'running') {
     try { process.kill(job.pid, 'SIGTERM') } catch {}
-    job.status = 'cancelled'
-    job.finishedAt = new Date().toISOString()
   }
+  try { require('fs').unlinkSync(jobFile(req.params.id)) } catch {}
   jobs.delete(req.params.id)
   res.json({ message: `Job ${req.params.id} removed` })
 })
