@@ -664,6 +664,10 @@ async function fetchImageUrls(slug, imgHeaders, imgPool, maxRetries = 2) {
 }
 
 async function enrichJsonlWithImages(concurrency = IMG_CONCURRENCY, forceReEnrich = false) {
+  if (global._skipImages) {
+    logger.info('Image enrichment skipped (no browser available).')
+    return
+  }
   logger.info(`Image enrichment pass: reading ${OUTPUT_FILE}…`)
   if (!existsSync(OUTPUT_FILE)) return
 
@@ -1663,7 +1667,12 @@ async function main() {
           logger.debug(`CF-solver launch failed (channel=${channel}): ${e.message}`)
         }
       }
-      if (!cfContext) logger.warn('Could not launch CF-solver browser — HTTP mode may fail CF checks.')
+      if (!cfContext) {
+        logger.warn('Could not launch CF-solver browser — scraping without image enrichment.')
+        // Patch enrichJsonlWithImages to be a no-op so the job still completes
+        // with all parts data, just no images.
+        global._skipImages = true
+      }
 
       const ok = await runHttp(concurrency, captchaWaitS, cfContext)
 
@@ -1672,6 +1681,10 @@ async function main() {
       }
 
       if (!ok) {
+        if (!cfContext) {
+          logger.warn('HTTP mode failed and no browser available — cannot continue.')
+          process.exit(EXIT_FATAL)
+        }
         logger.info(`HTTP mode unavailable — switching to Playwright (concurrency=${concurrency})…`)
         await runPlaywright(concurrency, cdpUrl, captchaWaitS)
       }
