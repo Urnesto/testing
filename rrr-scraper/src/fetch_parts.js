@@ -151,14 +151,21 @@ let _proxyAgents = []
 let _proxyIdx    = 0
 
 function initProxies() {
+  // Try file first, then PROXY_LIST env var (newline or comma separated)
+  let raw = null
   try {
-    _proxyUrls = readFileSync(_PROXY_FILE, 'utf-8')
-      .split('\n').map(l => l.trim()).filter(Boolean)
-      .map(l => l.startsWith('http') ? l : `http://${l}`)
+    raw = readFileSync(_PROXY_FILE, 'utf-8')
   } catch {
-    logger.warn(`Proxy file not found: ${_PROXY_FILE} — running without proxy`)
-    return
+    if (process.env.PROXY_LIST) {
+      raw = process.env.PROXY_LIST.replace(/,/g, '\n')
+      logger.info('Proxy list loaded from PROXY_LIST env var.')
+    } else {
+      logger.warn(`Proxy file not found and PROXY_LIST env var not set — running without proxy`)
+      return
+    }
   }
+  _proxyUrls = raw.split('\n').map(l => l.trim()).filter(Boolean)
+    .map(l => l.startsWith('http') ? l : `http://${l}`)
   _proxyAgents = _proxyUrls.map(uri => new ProxyAgent({
     uri,
     headersTimeout: 30000,
