@@ -79,7 +79,8 @@ function launchScraper(job) {
   if (params.concurrency) args.push('--concurrency', String(params.concurrency))
   if (params.browser)     args.push('--browser')
   if (params.proxy)       args.push('--proxy')
-  if (params.enrichOnly)  args.push('--enrich-only')
+  if (params.enrichOnly)     args.push('--enrich-only')
+  if (params.imgConcurrency) args.push('--img-concurrency', String(params.imgConcurrency))
 
   const child = spawn('node', [join(__dirname, 'fetch_parts.js'), ...args], {
     cwd: ROOT,
@@ -112,7 +113,7 @@ function launchScraper(job) {
 
 // POST /api/scrape — start a scrape job
 app.post('/api/scrape', (req, res) => {
-  const { seller = '', concurrency = 20, browser = false, proxy = false, enrichOnly = false } = req.body
+  const { seller = '', concurrency = 20, browser = false, proxy = false, enrichOnly = false, imgConcurrency = 50 } = req.body
   let { name = '' } = req.body
 
   if (!seller && !name) {
@@ -128,7 +129,7 @@ app.post('/api/scrape', (req, res) => {
     }
   }
 
-  const job = createJob({ seller, name, concurrency, browser, proxy, enrichOnly })
+  const job = createJob({ seller, name, concurrency, browser, proxy, enrichOnly, imgConcurrency })
   launchScraper(job)
 
   res.status(202).json({ jobId: job.id, name, status: job.status, message: 'Scrape started' })
