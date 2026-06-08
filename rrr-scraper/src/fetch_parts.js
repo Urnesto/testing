@@ -401,6 +401,75 @@ function loadCategoryKeys() {
     .map(Number)
 }
 
+// Recursively collect leaf category IDs where part_count > 0.
+// Leaf = node with no sub_categories (or empty). ID comes from category_id
+// field when present, otherwise from the object key.
+function extractLeafCategoryIds(categories, result = []) {
+  for (const [key, val] of Object.entries(categories)) {
+    if (!val || typeof val !== 'object') continue
+    const id = val.category_id ?? parseInt(key)
+    const subs = val.sub_categories
+    if (subs && Object.keys(subs).length > 0) {
+      extractLeafCategoryIds(subs, result)
+    } else if ((val.part_count || 0) > 0 && !isNaN(id)) {
+      result.push(id)
+    }
+  }
+  return result
+}
+
+// Fetch category keys dynamically from the rrr.lt API.
+// Priority: 1) categories embedded in probe response
+//           2) dedicated categories endpoint
+//           3) fall back to static file
+async function fetchDynamicCategoryKeys(probe, pool = null) {
+  // 1. Probe response may already contain the category tree
+  if (probe?.categories && typeof probe.categories === 'object') {
+    const ids = extractLeafCategoryIds(probe.categories)
+    if (ids.length > 0) {
+      logger.info(`Loaded ${ids.length} category keys from search response (part_count > 0)`)
+      return ids
+    }
+  }
+
+  // 2. Try dedicated endpoints if pool is available
+  if (pool) {
+    const paths = [
+      `/paieska?sh=${SEARCH_ID}&categories=1`,
+      `/api/categories?sh=${SEARCH_ID}`,
+      `/api/categories`,
+    ]
+    for (const path of paths) {
+      try {
+        const res = await pool.request({ path, method: 'GET', headers: XHR_HEADERS, throwOnError: false })
+        if (res.statusCode !== 200) { await res.body.dump(); continue }
+        const text = await readBodyText(res)
+        const data = JSON.parse(text)
+        const cats = data.categories ?? data
+        if (cats && typeof cats === 'object') {
+          const ids = extractLeafCategoryIds(cats)
+          if (ids.length > 0) {
+            logger.info(`Loaded ${ids.length} category keys from ${path} (part_count > 0)`)
+            return ids
+          }
+        }
+      } catch (e) {
+        logger.debug(`Category endpoint ${path} failed: ${e.message}`)
+      }
+    }
+  }
+
+  // 3. Fall back to static file
+  const fileKeys = loadCategoryKeys()
+  if (fileKeys.length > 0) {
+    logger.info(`Loaded ${fileKeys.length} category keys from static file (fallback)`)
+    return fileKeys
+  }
+
+  logger.error('No category keys available — cannot run category mode.')
+  return []
+}
+
 // ── Signal handling ───────────────────────────────────────────────────────────
 
 function registerSignals() {
@@ -1016,9 +1085,8 @@ async function runHttp(concurrency, captchaWaitS = 0, cfContext = null) {
     // ── Category mode (total_rows ≥ 10 000) ──────────────────────────────────
     logger.info(`total_rows=${totalRows} ≥ 10000 — switching to category mode.`)
 
-    const categoryKeys = loadCategoryKeys()
+    const categoryKeys = await fetchDynamicCategoryKeys(probe, pool)
     if (!categoryKeys.length) {
-      logger.error(`No category keys found in ${CATEGORY_KEYS_FILE} — cannot continue.`)
       process.exit(EXIT_FATAL)
     }
 
@@ -1334,9 +1402,8 @@ async function runPlaywright(concurrency, cdpUrl, captchaWaitS = 0) {
   if (totalRows >= 10_000) {
     logger.info(`total_rows=${totalRows} ≥ 10000 — switching to category mode (browser).`)
 
-    const categoryKeys = loadCategoryKeys()
+    const categoryKeys = await fetchDynamicCategoryKeys(probe)
     if (!categoryKeys.length) {
-      logger.error(`No category keys found in ${CATEGORY_KEYS_FILE} — cannot continue.`)
       if (!cdpUrl) await browser.close()
       process.exit(EXIT_FATAL)
     }
