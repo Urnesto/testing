@@ -675,10 +675,24 @@ function extractImagesFromHtml(html) {
   return []
 }
 
+function stripImageTransforms(url) {
+  try {
+    const u = new URL(url)
+    // Strip corner prefix and optional fill segment:
+    //   /br/fill,g_tb/cib/... → /cib/...   (removes br/ and fill segment)
+    //   /br/1024x768/cib/...  → /1024x768/cib/... (removes only br/, keeps size)
+    u.pathname = u.pathname.replace(/^\/(bl|br|tl|tr)\/(?:fill[^/]*\/)?/, '/')
+    return u.href
+  } catch { return url }
+}
+
 function validateImageUrls(images) {
-  return images.filter(img => {
-    if (typeof img !== 'string' || !img) return false
-    try { return new URL(img).protocol.startsWith('http') } catch { return false }
+  return images.flatMap(img => {
+    if (typeof img !== 'string' || !img) return []
+    try {
+      if (!new URL(img).protocol.startsWith('http')) return []
+      return [stripImageTransforms(img)]
+    } catch { return [] }
   })
 }
 
