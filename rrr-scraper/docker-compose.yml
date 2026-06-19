@@ -4,7 +4,10 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./output:/app/output   # persist scraped data on host
+      - ./output:/app/output
+      - ../proxy:/app/proxy
     environment:
       - PORT=3000
+      - OXYLABS_USER=${OXYLABS_USER}
+      - OXYLABS_PASS=${OXYLABS_PASS}
     restart: unless-stopped
